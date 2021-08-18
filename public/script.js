@@ -16,12 +16,12 @@ const h2 = document.querySelector("h2");
 function fillQuestionElements(data) {
   if (data.winner === true) {
     gameBoard.style.display = "none";
-    h2.innerText = "win";
+    h2.innerText = "YOU WIN";
     return;
   }
   if (data.loser === true) {
     gameBoard.style.display = "none";
-    h2.innerText = "przegrales";
+    h2.innerText = "YOU LOST";
     return;
   }
 

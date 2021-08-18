@@ -9,19 +9,39 @@ function gameRoutes(app) {
 
   const questions = [
     {
-      question: "Jaki jest najlepszy jezyk?",
-      answers: ["c++", "fortran", "javascript", "java"],
+      question: "Who is the best football player?",
+      answers: ["Messi", "Suarez", "Lewandowski", "Ronaldo"],
       correctAnswer: 2,
     },
     {
-      question: "test2",
-      answers: ["nie", "tak", "test2", "test3"],
+      question: "2021 Olympic Games were in..",
+      answers: ["London", "Tokio", "Madrid", "Rome"],
       correctAnswer: 1,
     },
     {
-      question: "a",
-      answers: ["a", "b", "c", "d"],
+      question: "2022 Mundial will visit..",
+      answers: ["Italy", "Germany", "Spain", "Qatar"],
       correctAnswer: 3,
+    },
+    {
+      question: "Who is the richest person in the world?",
+      answers: ["Richard Bronson", "Elon Musk", "Jeff Bezos", "Bill Gates"],
+      correctAnswer: 2,
+    },
+    {
+      question: "The largest ocean in the world is...",
+      answers: [
+        "Pacific Ocean",
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Southern Ocean",
+      ],
+      correctAnswer: 0,
+    },
+    {
+      question: "The second World War began in...",
+      answers: ["1938", "1941", "1939", "1945"],
+      correctAnswer: 2,
     },
   ];
 
@@ -75,7 +95,7 @@ function gameRoutes(app) {
   app.get("/help/friend", (req, res) => {
     if (callToAFriendUsed) {
       return res.json({
-        text: "kolo zostalo wykorzystane",
+        text: "YOU HAVE USED THIS OPTION",
       });
     }
 
@@ -87,15 +107,15 @@ function gameRoutes(app) {
 
     res.json({
       text: doesFriendKnowAnswer
-        ? `mysle ze odpowiedz to ${question.answers[question.correctAnswer]}`
-        : "i dont knot ",
+        ? `I think that answer is ${question.answers[question.correctAnswer]}`
+        : "Sorry, but I don't know ",
     });
   });
 
   app.get("/help/half", (req, res) => {
     if (halfByhalfUsed) {
       return res.json({
-        text: "kolo zostalo wykorzystane",
+        text: "YOU HAVE USED THIS OPTION",
       });
     }
 
@@ -116,7 +136,7 @@ function gameRoutes(app) {
   app.get("/help/crowd", (req, res) => {
     if (questionToTheCrowdUsed) {
       return res.json({
-        text: "kolo zostalo wykorzystane",
+        text: "YOU HAVE USED THIS OPTION",
       });
     }
 
